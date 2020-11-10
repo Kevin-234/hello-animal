@@ -35,7 +35,7 @@ db.once('open', function() {
 app.get('/animals', function(request, response){
   Animal.find(function(err, animals) {
     console.log(animals);
-    response.render('./pages/animals',{animals: animals})
+    response.render('./views/pages/animals',{animals: animals})
   });
 })
 
