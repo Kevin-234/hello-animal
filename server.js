@@ -35,9 +35,17 @@ db.once('open', function() {
 app.get('/animals', function(request, response){
   Animal.find(function(err, animals) {
     console.log(animals);
-    response.render('./pages/animals', {animals: animals})
+    response.send({animals: animals})
   });
 })
+
+// app.post('/animals', function(request, response){
+//   // const animal = new Animal(request.body);
+//   newTodoObj.save(function(error) {
+//     if (error) return response.status(500).send(err);
+//     return response.send(`<p>Thanks for the ${request.body.title}</p>`);
+// });
+// })
 
 // Add more middleware
 app.use(function(req, res, next) {
@@ -45,8 +53,8 @@ app.use(function(req, res, next) {
   res.send('404: File Not Found');
 });
 
-// Set port preferrence with default
-const PORT = process.env.PORT || 3000;
+// Set port preference with default
+const PORT = process.env.PORT || 4000;
 
 // Start server
 app.listen(PORT, function(){
