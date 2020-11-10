@@ -37,11 +37,11 @@ app.get('/animals', function(request, response){
     console.log(animals);
     response.render('./pages/animals',{animals: animals})
   });
-})
+});
 
 app.get('/test', function(request, response){
   response.send('hello-world')
-})
+});
 // app.post('/animals', function(request, response){
 //   // const animal = new Animal(request.body);
 //   newTodoObj.save(function(error) {
