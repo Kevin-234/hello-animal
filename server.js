@@ -33,7 +33,7 @@ db.once('open', function() {
 });
 
 app.get('/animals', function(request, response){
-  Animal.find(function(err, animals) {
+  Animal.find(function(error, animals) {
     console.log(animals);
     response.render('./pages/animals',{animals: animals})
   });
