@@ -35,7 +35,7 @@ db.once('open', function() {
 app.get('/animals', function(request, response){
   Animal.find(function(err, animals) {
     console.log(animals);
-    response.render('./views/pages/animals',{animals: animals})
+    response.render('./pages/animals',{animals: animals})
   });
 })
 
@@ -54,7 +54,7 @@ app.use(function(req, res, next) {
 });
 
 // Set port preference with default
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4001;
 
 // Start server
 app.listen(PORT, function(){
